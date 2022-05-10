@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  ts-node-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: zemoga_test
+    image: nodejs
+    container_name: nodejs_zemoga_test
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - .:/home/node/app
+      - ./nodemon.json:/home/node/app/nodemon.json
+      - ./.babelrc:/home/node/app/.babelrc
+      - ./tsconfig.json:/home/node/app/tsconfig.json
+    expose:
+      - '80'
+    ports:
+      - '80:8080'
+    #command: tail -f /dev/null
+    command: yarn dev
+volumes:
+  dbdata:
