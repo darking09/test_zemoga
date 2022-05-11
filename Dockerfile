@@ -1,4 +1,4 @@
-FROM node:14.19.1 as zemoga_test
+FROM node:14.19.1-buster-slim as zemoga_test
 
 WORKDIR /home/node/app
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-function LinkProfile() {
+function LinkProfile(props:any) {
   return (
-    <a href={'https://google.com'}>Go to Account</a>
+    <a href={`https://twitter.com/${props.handle}`}>Go to Account</a>
   )
 }
 
