@@ -7,6 +7,7 @@ function Timeline(props : any) {
     <ListGroup>
         {
           props.tweets.map((t:any) => <Tweets
+            key={t._id}
             image={t.picture}
             name={t.name}
             content={t.content}

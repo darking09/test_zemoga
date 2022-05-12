@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
+import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -69,6 +69,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
+  console.log(process.env.URL_BASE)
   return { 
     props: {
       urlBase : process.env.URL_BASE
